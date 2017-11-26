@@ -1,44 +1,43 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
+
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'kien/ctrlp.vim'
-Plugin 'nbouscal/vim-stylish-haskell'
-Plugin 'dhruvasagar/vim-buffer-history'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'eagletmt/neco-ghc'
-Plugin 'tomtom/tlib_vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'garbas/vim-snipmate'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'godlygeek/tabular'
-Plugin 'ervandew/supertab'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'itchyny/vim-haskell-indent'
-Plugin 'endel/vim-github-colorscheme'
-Plugin 'jacoborus/tender.vim'
-Plugin 'tomasiser/vim-code-dark'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'joshdick/onedark.vim'
-Plugin 'google/vim-colorscheme-primary'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'xolox/vim-colorscheme-switcher'
-Plugin 'xolox/vim-misc'
-Plugin 'jreybert/vimagit'
-Plugin 'tpope/vim-fugitive'
-Plugin 'junegunn/vim-easy-align'
+Plug 'gmarik/Vundle.vim'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'kien/ctrlp.vim'
+Plug 'nbouscal/vim-stylish-haskell'
+Plug 'dhruvasagar/vim-buffer-history'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-syntastic/syntastic'
+Plug 'eagletmt/ghcmod-vim'
+Plug 'Shougo/vimproc.vim'
+Plug 'eagletmt/neco-ghc'
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'godlygeek/tabular'
+Plug 'ervandew/supertab'
+Plug 'Shougo/neocomplete.vim'
+Plug 'itchyny/vim-haskell-indent'
+Plug 'endel/vim-github-colorscheme'
+Plug 'jacoborus/tender.vim'
+Plug 'tomasiser/vim-code-dark'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'nanotech/jellybeans.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'google/vim-colorscheme-primary'
+Plug 'flazz/vim-colorschemes'
+Plug 'xolox/vim-colorscheme-switcher'
+Plug 'xolox/vim-misc'
+Plug 'jreybert/vimagit'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-surround'
 
-" more Plugin commands
+" more Plug commands
 " ...
-call vundle#end()            " required
+call plug#end()            " required
