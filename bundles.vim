@@ -37,6 +37,7 @@ Plug 'jreybert/vimagit'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-surround'
+Plug 'mbbill/undotree'
 
 " more Plug commands
 " ...

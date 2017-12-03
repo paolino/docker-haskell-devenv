@@ -35,6 +35,7 @@ ENV STACK_ROOT=/stack
 
 WORKDIR $HOME
 RUN mkdir -p .vim/bundle
+RUN mkdir -p .vim/undo
 
 ADD bundles.vim bundles.vim
 
