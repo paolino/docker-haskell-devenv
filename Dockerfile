@@ -31,9 +31,22 @@ RUN rm -rf "$GNUPGHOME" /var/lib/apt/lists/* /stack.tar.gz.asc /stack.tar.gz
 
 ENV STACK_ROOT=/stack
 
-#vim
 
+RUN apt-get update && apt-get install -y sudo 
+
+
+
+ENTRYPOINT ["bash"]
+
+ENV PATH=$PATH:$HOME/.local/bin
+
+env USER developer
+RUN useradd $USER -s /bin/bash -m -u 21348 -G sudo 
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+env HOME /home/$USER
 WORKDIR $HOME
+USER $USER
 RUN mkdir -p .vim/bundle
 RUN mkdir -p .vim/undo
 
@@ -45,24 +58,15 @@ RUN vim -u bundles.vim +PlugInstall +qall
 
 ADD bundles.vim .vimrc
 ADD rest.vim rest.vim
+RUN sudo chown -R $USER:$USER .
 RUN cat rest.vim >> .vimrc
 RUN rm bundles.vim rest.vim
-
 
 WORKDIR $HOME/.vim/plugged/vimproc.vim
 RUN make
 
 
 WORKDIR $HOME
+RUN sudo apt-get install -y busybox procps
 
-run wget -nv https://download.opensuse.org/repositories/shells:fish:release:2/Debian_9.0/Release.key \
-    -O Release.key
-run apt-key add - < Release.key
-run echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/2/Debian_9.0/ /'> \ 
-    /etc/apt/sources.list.d/fish.list 
-run apt-get update
-run apt-get install -y fish
-run chsh -s /usr/bin/fish
-
-ENTRYPOINT ["fish"]
-ENV PATH=$PATH:$HOME/.local/bin
+volume /nix
