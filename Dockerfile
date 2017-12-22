@@ -41,7 +41,7 @@ ENTRYPOINT ["bash"]
 ENV PATH=$PATH:$HOME/.local/bin
 
 env USER developer
-RUN useradd $USER -s /bin/bash -m -u 21348 -G sudo 
+RUN useradd $USER -s /bin/bash -m -u 1000 -G sudo 
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 env HOME /home/$USER
@@ -68,5 +68,6 @@ RUN make
 
 WORKDIR $HOME
 RUN sudo apt-get install -y busybox procps
+RUN sudo apt-get install -y bzip2 xz-utils
 
 volume /nix
