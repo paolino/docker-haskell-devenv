@@ -70,5 +70,6 @@ WORKDIR $HOME
 RUN sudo apt-get install -y busybox procps
 RUN sudo apt-get install -y bzip2 xz-utils
 RUN sudo apt-get install -y zlib1g-dev
+RUN git clone https://github.com/reflex-frp/reflex-platform
 
 
