@@ -69,5 +69,6 @@ RUN make
 WORKDIR $HOME
 RUN sudo apt-get install -y busybox procps
 RUN sudo apt-get install -y bzip2 xz-utils
+RUN sudo apt-get install -y zlib1g-dev
 
-volume /nix
+
