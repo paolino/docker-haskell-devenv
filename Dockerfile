@@ -36,7 +36,6 @@ RUN apt-get update && apt-get install -y sudo
 
 
 
-ENTRYPOINT ["bash"]
 
 ENV PATH=$PATH:$HOME/.local/bin
 
@@ -71,5 +70,14 @@ RUN sudo apt-get install -y busybox procps
 RUN sudo apt-get install -y bzip2 xz-utils
 RUN sudo apt-get install -y zlib1g-dev
 RUN git clone https://github.com/reflex-frp/reflex-platform
+RUN sudo apt-get install -y libtinfo-dev
+RUN sudo apt-get install -y locales
+Run sudo localedef -c -f UTF-8 -i en_US en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
+RUN PATH=$HOME/.local/bin:$ATH
+RUN curl https://nixos.org/nix/install | sh
+RUN echo ". $HOME/.nix-profile/etc/profile.d/nix.sh" >>  $HOME/.bashrc
+ADD hask.sh hask.sh
+RUN cat hask.sh >> $HOME/.bashrc
 
-
+ENTRYPOINT ["bash"]
